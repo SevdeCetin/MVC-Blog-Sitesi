@@ -1,0 +1,51 @@
+﻿@using TravelTripProje.Models.Siniflar
+@model List<yorum>
+@{
+    ViewBag.Title = "Yorum";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<a href="/Admin/YeniYorum/" class="btn btn-primary">Yeni Yorum</a>
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Kullanıcı Adı</th>
+        <th>Mail</th>
+        <th>Yorum</th>
+        <th>Yıldız</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.KullaniciAdi</td>
+            <td>@x.Mail</td>
+            <td>@x.Yorum</td>
+            <td>
+                 <div class="rating">
+
+                                <input type="radio" id="star5" name="rating" value="5" checked/><label for="star5" title="Meh">5 stars</label>
+                                <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Kinda bad">4 stars</label>
+                                <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Kinda bad">3 stars</label>
+                                <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Sucks big tim">2 stars</label>
+                                <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Sucks big time">1 star</label>
+                            </div>
+
+            </td>
+            <td>@Html.ActionLink("SİL", "YorumSil", new { id = x.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istediğinize emin misiniz?')" })</td>
+            <td><a href="/Admin/YorumGetir/@x.ID" class="btn btn-warning">GÜNCELLE</a></td>
+
+        </tr>
+    }
+
+</table>
+
+
+
+
+

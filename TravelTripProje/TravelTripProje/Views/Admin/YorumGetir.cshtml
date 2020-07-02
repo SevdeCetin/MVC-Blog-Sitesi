@@ -1,0 +1,35 @@
+﻿@model TravelTripProje.Models.Siniflar.Yorumlar
+@{
+    ViewBag.Title = "YorumGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("YorumGuncelle", "Admin", FormMethod.Post))
+{
+    <div class="form-group">
+        <br />
+        @Html.LabelFor(m => m.KullaniciAdi)
+        @Html.TextBoxFor(m => m.KullaniciAdi, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Mail)
+        @Html.TextBoxFor(m => m.Mail, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Yorum)
+        @Html.TextBoxFor(m => m.Yorum, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => m.Blogid)
+        @Html.TextBoxFor(m => m.Blogid, new { @class = "form-control" })
+        <br />
+        
+    </div>
+    <div>
+        @Html.HiddenFor(m => m.ID)
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
+
+
+
+
+

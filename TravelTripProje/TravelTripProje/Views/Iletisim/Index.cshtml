@@ -1,0 +1,67 @@
+﻿@model TravelTripProje.Models.Siniflar.iletisim
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_tLayout.cshtml";
+}
+
+<div class="contact">
+    <div class="wrap">
+        <div class="contact-top">
+            <h3>Bize Ulaşın</h3>
+            <p> </p>
+        </div>
+
+        @using (Html.BeginForm("YeniMesaj", "iletisim", FormMethod.Post))
+        {
+            <div class="form">
+              
+                    <div>
+                        
+                        @Html.TextBoxFor(m => m.AdSoyad, new { placeholder = "Adınız..", @class = "form-control" })
+                    </div>
+                    <div>
+                        
+                        @Html.TextBoxFor(m => m.Mail, new { placeholder = "Mail..",  @class = "form-control" })
+                    </div>
+                    <div>
+                        
+                        @Html.TextBoxFor(m => m.Konu, new { placeholder = "Konu.." , @class = "form-control" })
+                    </div>
+                    <div>
+                        
+                        @Html.TextAreaFor(m => m.Mesaj, new { placeholder = "Mesaj.." , @class = "form-control" })
+                    </div>
+                    <br />
+                    <div>
+                        <button class="read">Gönder</button>
+
+                    </div>
+
+
+            </div>
+        }
+
+            <div class="form1">
+                <iframe src="https://www.google.com/maps/d/embed?mid=1guWdoxwyGyqNEbusxsV3_ESduuzoILym" width="640" height="480"></iframe>
+            </div>
+            <div class="clear"></div>
+            <div class="form1">
+                <div class="contact-left">
+                    <div class="contact-add">
+                        <h3>Adres</h3>
+                        <p> Örnek adres olarak Kocaeli Üniversitesi Teknoloji Fakültesi</p>
+                        <p>Telefon: 0500-000-0000</p>
+                        <p>Fax: 500-000-0000</p>
+                        <p>Mail: <a href="mailto:signup@gmail.com">İletişim@GeziRehberi.com</a></p>
+                    </div>
+                    <div class="contact-add">
+
+                    </div>
+                </div>
+
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+</div>
+

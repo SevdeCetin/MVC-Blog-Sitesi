@@ -1,0 +1,14 @@
+﻿@using TravelTripProje.Models.Siniflar
+@model List<Kayak>
+  
+<div class="padding">
+    <h4>En İyi 10 Kayak Merkezi</h4>
+    <ul class="list list-pad">
+        @foreach (var x in Model)
+        {
+            <li class="list-bg"><span>@x.ID</span><a href="/KayakMerkezi/KayakDetay/@x.ID">@x.Baslik</a></li>
+        }
+
+    </ul>
+    <a href="/KayakMerkezi/Index" class="link1">Daha Fazlası  </a>
+</div>

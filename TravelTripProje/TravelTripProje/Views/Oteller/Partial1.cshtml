@@ -1,0 +1,14 @@
+﻿@using TravelTripProje.Models.Siniflar
+@model List<Oteller>
+
+<div class="comments">
+    <h3>En İyi Oteller</h3>
+    @foreach (var x in Model)
+    {
+        <ul>
+            <li><a href="/Oteller/OtelDetay/@x.ID">@x.Baslik</a></li>
+
+        </ul>
+    }
+</div>
+

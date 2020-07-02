@@ -1,0 +1,18 @@
+﻿@using TravelTripProje.Models.Siniflar
+@model List<Yorumlar>
+
+@foreach (var y in Model)
+{
+    <ul class="comment-list"  >
+
+        <li>
+            <img src="~/web2/images/avatar.png" class="img-responsive" alt="" style="width:35px; height:35px;">
+            <div class="desc">
+                <p><b>@y.KullaniciAdi</b>: @y.Yorum</p>
+                
+            </div>
+            <div class="clearfix"></div>
+        </li>
+
+    </ul>
+}

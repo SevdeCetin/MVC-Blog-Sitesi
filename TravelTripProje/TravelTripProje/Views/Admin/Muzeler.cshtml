@@ -1,0 +1,34 @@
+﻿@using TravelTripProje.Models.Siniflar
+@model List<Muzeler>
+
+@{
+    ViewBag.Title = "Muzeler";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<a href="/Admin/YeniMuze/" class="btn btn-primary">YENİ MÜZE </a>
+<br />
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>BAŞLIK</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.Baslik</td>
+            <td>@Html.ActionLink("SİL", "MuzeSil", new { id = x.ID }, new { @class = "btn btn-danger", onclick = "return confirm('Silmek istediğinize emin misiniz?')" })</td>
+            <td><a href="/Admin/MuzeGetir/@x.ID" class="btn btn-warning">GÜNCELLE</a></td>
+       
+        </tr>
+    }
+
+</table>
+

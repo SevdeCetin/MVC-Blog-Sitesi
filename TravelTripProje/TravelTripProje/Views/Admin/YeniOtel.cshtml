@@ -1,0 +1,47 @@
+﻿@model TravelTripProje.Models.Siniflar.Oteller
+
+@{
+    ViewBag.Title = "YeniOtel";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<form class="form-group" method="post">
+    @*<div>
+            <label>KATEGORİ ADI:</label>
+            <input type="text" class="form-control" name="KATEGORIAD" />
+        </div>*@
+    <div>
+        <label>OTEL ADI:</label>
+        @Html.TextBoxFor(m => m.Baslik, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Baslik, "", new { @style = "color:blue" })
+    </div>
+
+    <div>
+        <label>TARİH:</label>
+        @Html.TextBoxFor(m => m.Tarih, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Tarih, "", new { @style = "color:blue" })
+    </div>
+    <div>
+        <label>AÇIKLAMA:</label>
+        @Html.TextAreaFor(m => m.Aciklama, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Aciklama, "", new { @style = "color:blue" })
+    </div>
+    <div>
+        <label>OTEL FOTOĞRAF URL:</label>
+        @Html.TextBoxFor(m => m.OtelImage, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.OtelImage, "", new { @style = "color:blue" })
+    </div>
+    <div>
+        <label>KONUM URL:</label>
+        @Html.TextBoxFor(m => m.Konum, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Konum, "", new { @style = "color:blue" })
+    </div>
+
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Ekle</button>
+    </div>
+</form>
+
+

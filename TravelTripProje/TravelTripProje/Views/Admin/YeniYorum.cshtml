@@ -1,0 +1,50 @@
+﻿@model TravelTripProje.Models.Siniflar.yorum
+@{
+    ViewBag.Title = "YeniYorum";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    @*<div>
+            <label>KATEGORİ ADI:</label>
+            <input type="text" class="form-control" name="KATEGORIAD" />
+        </div>*@
+    <div>
+        <label> ADI:</label>
+        @Html.TextBoxFor(m => m.KullaniciAdi, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.KullaniciAdi, "", new { @style = "color:blue" })
+    </div>
+
+    <div>
+        <label>mail:</label>
+        @Html.TextBoxFor(m => m.Mail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Mail, "", new { @style = "color:blue" })
+    </div>
+    <div>
+        <label>AÇIKLAMA:</label>
+        @Html.TextAreaFor(m => m.Yorum, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Yorum, "", new { @style = "color:blue" })
+    </div>
+   
+    <div>
+        @Html.LabelFor(m => m.star, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.RadioButtonFor(model => model.star, "1")
+            @Html.RadioButtonFor(model => model.star, "2")
+            @Html.RadioButtonFor(model => model.star, "3")
+            @Html.RadioButtonFor(model => model.star, "4")
+            @Html.RadioButtonFor(model => model.star, "5")
+            
+
+
+            @Html.ValidationMessageFor(m => m.star, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Ekle</button>
+    </div>
+</form>
+
+
+
+
